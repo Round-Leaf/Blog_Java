@@ -10,6 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
@@ -17,6 +18,7 @@ import java.util.Map;
 
 @RestController
 @Validated
+@RequestMapping("/user")
 @CrossOrigin(origins = "http://localhost:3000",allowCredentials = "true",
         allowedHeaders = "*")
 public class UserController {

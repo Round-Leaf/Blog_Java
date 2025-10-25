@@ -11,7 +11,7 @@ public class Result<E>{
     public E data;
 
     public static <E> Result<E> success(E info){
-        return new Result<>(0,"success",info);
+        return new Result<>(1,"success",info);
     }
     public static Result success(){
         return new Result(1,"success",null);

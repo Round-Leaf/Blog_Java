@@ -1,6 +1,5 @@
 package com.linfeng.spring1910.server;
 
-import com.linfeng.spring1910.pojo.Articles;
 import com.linfeng.spring1910.pojo.User;
 
 

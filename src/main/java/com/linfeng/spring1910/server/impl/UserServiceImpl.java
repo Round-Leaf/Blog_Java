@@ -1,7 +1,6 @@
 package com.linfeng.spring1910.server.impl;
 
 import com.linfeng.spring1910.mapper.UserMapper;
-import com.linfeng.spring1910.pojo.Articles;
 import com.linfeng.spring1910.pojo.User;
 import com.linfeng.spring1910.server.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
