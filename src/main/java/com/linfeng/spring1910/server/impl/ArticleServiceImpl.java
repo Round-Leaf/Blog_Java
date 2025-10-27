@@ -13,11 +13,18 @@ import java.util.List;
 public class ArticleServiceImpl implements ArticleService {
     @Autowired
     ArticleMapper articleMapper;
+    @Override
     public void update(Article article) {
         articleMapper.update(article);
     }
+    @Override
     public Article getArticle(int id){
         return articleMapper.getArticle(id);
+    }
+
+    @Override
+    public List<Article> getArticleByUser(String username) {
+        return articleMapper.getArticleByUser(username);
     }
 
     @Override

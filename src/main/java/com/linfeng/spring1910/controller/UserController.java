@@ -41,7 +41,7 @@ public class UserController {
     public Result<String> login(@Pattern(regexp = "^\\S{3,20}$") String username, @Pattern(regexp = "^\\S{3,20}$") String password){
         User loginUser = userService.findByUserName(username);
         if(loginUser==null){
-            return Result.error("User doesn't exist");
+            return Result.error("User doesn't exist: "+username);
         }else{
             BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
             if(encoder.matches(password,loginUser.getPassword())){

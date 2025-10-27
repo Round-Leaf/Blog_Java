@@ -17,4 +17,7 @@ public interface ArticleMapper {
 
     @Select("SELECT * FROM articles WHERE id=#{id}")
     public Article getArticle(int id);
+
+    @Select("SELECT * FROM articles WHERE username=#{username}")
+    public List<Article> getArticleByUser(String username);
 }

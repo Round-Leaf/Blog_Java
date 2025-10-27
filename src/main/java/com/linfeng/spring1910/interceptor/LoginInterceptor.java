@@ -22,6 +22,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             return true;
         } catch (Exception e) {
             response.setStatus(401);
+            //response.getWriter().write(e.getMessage());
             response.getWriter().write(Result.error("Unauthorized").toString());
             System.out.println(e.getMessage());
             return false;

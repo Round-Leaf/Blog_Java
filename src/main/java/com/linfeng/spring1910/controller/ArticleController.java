@@ -19,7 +19,7 @@ import java.util.Map;
 public class ArticleController {
     @Autowired
     private ArticleService articleService;
-    @GetMapping("")
+    @GetMapping("/all")
     public Result<List<Article>> home(){
         return Result.success(articleService.getAll());
     }
@@ -35,7 +35,7 @@ public class ArticleController {
     @GetMapping("/my")
     public Result my() {
         Map<String,?> claims = ThreadLocalUtil.get();
-        return Result.success("Data of Articles");
+        return Result.success(articleService.getArticleByUser(claims.get("username").toString()));
     }
     @PostMapping("/update")
     public Result update(String content, String title,@RequestParam int id){
