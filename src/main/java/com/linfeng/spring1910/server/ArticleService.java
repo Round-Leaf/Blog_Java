@@ -10,4 +10,6 @@ public interface ArticleService {
     public Article getArticle(int id);
     List<Article> getArticleByUser(String username);
     List<Article> getAll();
+
+    void add(Article article);
 }

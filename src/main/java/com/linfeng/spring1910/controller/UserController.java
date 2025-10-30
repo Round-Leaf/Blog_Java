@@ -28,7 +28,6 @@ public class UserController {
     public Result<String> register(@Pattern(regexp = "^\\S{3,20}$") String username, @Pattern(regexp = "^\\S{3,20}$") String password){
         if(username==null || password==null)    return Result.error("Parameter Error");
         User u = userService.findByUserName(username);
-        System.out.println("here");
         if(u==null){
             userService.register(username,password);
             return Result.success();
@@ -47,6 +46,7 @@ public class UserController {
             if(encoder.matches(password,loginUser.getPassword())){
                 Map<String,String> claims = new HashMap<>();
                 claims.put("username", loginUser.getUsername());
+                claims.put("id", String.valueOf(loginUser.getId()));
                 return Result.success(JwtUtil.genToken(claims));
             }else{
                 return Result.error("Wrong Password");

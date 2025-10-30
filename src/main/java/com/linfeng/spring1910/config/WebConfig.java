@@ -13,7 +13,8 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(loginInterceptor).addPathPatterns("/article/my");
-        registry.addInterceptor(loginInterceptor).addPathPatterns("/article/update/*");
+        registry.addInterceptor(loginInterceptor).addPathPatterns("/article/update");
+        registry.addInterceptor(loginInterceptor).addPathPatterns("/article/add");
         registry.addInterceptor(loginInterceptor).addPathPatterns("/comment/set");
     }
 }

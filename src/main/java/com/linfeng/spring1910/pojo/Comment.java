@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotNull;
 
 public class Comment {
     public int id;
+    public int author_id;
     public String author;
     public String date;
     public int likes;

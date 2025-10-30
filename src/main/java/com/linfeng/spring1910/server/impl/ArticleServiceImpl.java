@@ -31,4 +31,9 @@ public class ArticleServiceImpl implements ArticleService {
     public List<Article> getAll() {
         return articleMapper.getAll();
     }
+
+    @Override
+    public void add(Article article) {
+        articleMapper.add(article);
+    }
 }
